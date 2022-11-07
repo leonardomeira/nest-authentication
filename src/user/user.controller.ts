@@ -10,4 +10,9 @@ export class UserController {
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
+
+  @Get(':email')
+  findByEmail(@Param() params) {
+    return this.userService.findByEmail(params.email)
+  }
 }
